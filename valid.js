@@ -12,6 +12,21 @@ form.addEventListener('submit', e => {e.preventDefault();
       form.reset();
 });
 
+firstname.addEventListener('input', validateFName) 
+
+  function validateFName(){
+    if(firstname.value === ''){
+        setError(firstname, 'Firstname is required');
+    }
+    else if (!setName(firstname.value)){
+        setError(firstname, 'Please input valid firstname');
+    }
+
+    else {
+        setSuccess(firstname);
+    } 
+  }
+
 const validateInputs = () => {
     const firstnameValue = firstname.value.trim();
     const lastnameValue = lastname.value.trim();
@@ -29,7 +44,7 @@ const validateInputs = () => {
 
     else {
         setSuccess(firstname);
-    }
+    } 
 
     if(lastnameValue === ''){
         setError(lastname, 'Lastname is required');
@@ -95,6 +110,6 @@ const setSuccess = element => {
 }
 
 const setName = (firstname,lastname) => {
-      const re = /^[A-Za-z]+$/;
+      const re = /^[A-Za-z ]+$/;
       return re.test(firstname,lastname);
 }
