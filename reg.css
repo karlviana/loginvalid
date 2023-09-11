@@ -7,3 +7,28 @@
 body {
     background-color: #e5d0ff;
 }
+
+.form-group input:focus {
+  outline: 0;
+}
+
+.form-group.success input{
+    border-color: #09c372;
+}
+
+.form-group.error input{
+    border-color: #ff3860;
+}
+
+.form-group .error {
+    border-color: #ff3860;
+    height: 13px;
+    font-size: 9px;
+}
+
+button {
+    border-radius: 5px;
+    background-color: cornsilk;
+    border-color: white;
+    font-size: 18px;
+}
